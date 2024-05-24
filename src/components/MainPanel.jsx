@@ -11,7 +11,7 @@ export default function MainPanel({
 }) {
   return (
     <div
-      className={`main-panel border border-black bg-green-100 w-full p-5
+      className={`main-panel w-full min-h-screen overflow-hidden bg-green-100 pt-12 p-4 md:p-12
       ${isMainPanelVisible ? "visible" : "invisible"}`}
     >
       <div className="person-item min-w-full">

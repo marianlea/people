@@ -1,29 +1,20 @@
 export default function MoreDetails({ selectedPerson }) {
   return (
     <div className="more-details">
-      <table>
-        <tbody>
-          <tr>
-            <td colSpan="2">Address</td>
-          </tr>
-          <tr>
-            <td>Street</td>
-            <td>{selectedPerson.address.street}</td>
-          </tr>
-          <tr>
-            <td>Suite</td>
-            <td>{selectedPerson.address.suite}</td>
-          </tr>
-          <tr>
-            <td>City</td>
-            <td>{selectedPerson.address.city}</td>
-          </tr>
-          <tr>
-            <td>Zipcode</td>
-            <td>{selectedPerson.address.zipcode}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="more-details">
+        <div className="grid grid-cols-[40%_60%] gap-2 my-4">
+          <div className="text-end text-lg">Address</div>
+          <div></div>
+          <div className="text-end">Street</div>
+          <div>{selectedPerson.address.street}</div>
+          <div className="text-end">Suite</div>
+          <div>{selectedPerson.address.suite}</div>
+          <div className="text-end">City</div>
+          <div>{selectedPerson.address.city}</div>
+          <div className="text-end">Zipcode</div>
+          <div>{selectedPerson.address.zipcode}</div>
+        </div>
+      </div>
     </div>
   );
 }

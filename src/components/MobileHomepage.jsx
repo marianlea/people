@@ -15,7 +15,7 @@ export default function MobileHomepage({
   isPersonItemVisible,
 }) {
   return (
-    <div className="mobile-homepage">
+    <div className="mobile-homepage h-full">
       {isMainPanelVisible ? (
         <MainPanel
           selectedPerson={selectedPerson}

@@ -3,5 +3,5 @@ import App from "./App.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <App classname="h-full w-full" />
+  <App classname="min-h-screen w-full" />
 );

@@ -89,7 +89,7 @@ export default function Homepage({ isMobileOrTablet }) {
   };
 
   return (
-    <div className="homepage h-full w-full">
+    <div className="homepage">
       {isMobileOrTablet ? (
         <MobileHomepage
           selectedPerson={selectedPerson}
