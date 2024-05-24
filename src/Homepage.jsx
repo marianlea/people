@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-import PeopleApi from "../utils/people_api";
-import MobileHomepage from "../components/MobileHomepage";
-import WebHomepage from "../components/WebHomepage";
+import PeopleApi from "./utils/people_api";
+import MobileHomepage from "./components/MobileHomepage";
+import WebHomepage from "./components/WebHomepage";
 
 const user = {
   id: 0,
