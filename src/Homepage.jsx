@@ -4,30 +4,6 @@ import PeopleApi from "./utils/people_api";
 import MobileHomepage from "./components/MobileHomepage";
 import WebHomepage from "./components/WebHomepage";
 
-const user = {
-  id: 0,
-  name: "Reno Ichikawa",
-  username: "Reno8",
-  email: "reno@kaiju8.jp",
-  address: {
-    street: "Sakura Lane",
-    suite: "Apt. 108",
-    city: "Narashino",
-    zipcode: "275-0026",
-    geo: {
-      lat: "35.6839",
-      lng: "140.1233",
-    },
-  },
-  phone: "81-80-1234-5678",
-  website: "kaiju8.jp",
-  company: {
-    name: "Defence Force",
-    cathPhrase: "Protecting humanity from Kaiju threats",
-    bs: "eliminate kaiju efficiently",
-  },
-};
-
 export default function Homepage({ isMobileOrTablet }) {
   const [people, setPeople] = useState([]);
   const [searchInput, setSearchInput] = useState("");
