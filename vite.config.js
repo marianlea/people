@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: "/vercel/path0/src/utils/people_api.js",
+      external: "axios",
     },
   },
 });
