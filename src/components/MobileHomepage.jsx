@@ -13,6 +13,7 @@ export default function MobileHomepage({
   onShowMoreClick,
   isMoreDetailsVisible,
   isPersonItemVisible,
+  detailsButtonText,
 }) {
   return (
     <div className="mobile-homepage h-full">
@@ -24,6 +25,7 @@ export default function MobileHomepage({
           onShowMoreClick={onShowMoreClick}
           isMoreDetailsVisible={isMoreDetailsVisible}
           isPersonItemVisible={isPersonItemVisible}
+          detailsButtonText={detailsButtonText}
         />
       ) : (
         <SideBar

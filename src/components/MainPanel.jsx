@@ -7,7 +7,7 @@ export default function MainPanel({
   onShowMoreClick,
   isMoreDetailsVisible,
   isPersonItemVisible,
-  isMobileOrTablet,
+  detailsButtonText,
 }) {
   return (
     <div
@@ -22,6 +22,7 @@ export default function MainPanel({
             isMoreDetailsVisible={isMoreDetailsVisible}
             onBackClick={onBackClick}
             isPersonItemVisible={isPersonItemVisible}
+            detailsButtonText={detailsButtonText}
           />
         ) : null}
       </div>

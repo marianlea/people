@@ -14,6 +14,7 @@ export default function WebHomepage({
   isMoreDetailsVisible,
   isPersonItemVisible,
   isMobileOrTablet,
+  detailsButtonText,
 }) {
   return (
     <div className="web-homepage">
@@ -35,6 +36,7 @@ export default function WebHomepage({
           isMoreDetailsVisible={isMoreDetailsVisible}
           isPersonItemVisible={isPersonItemVisible}
           isMobileOrTablet={isMobileOrTablet}
+          detailsButtonText={detailsButtonText}
         />
       </div>
     </div>

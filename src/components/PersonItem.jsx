@@ -8,6 +8,7 @@ export default function PersonItem({
   onBackClick,
   isPersonItemVisible,
   isMobileOrTablet,
+  detailsButtonText,
 }) {
   return (
     <div
@@ -78,7 +79,7 @@ export default function PersonItem({
           <div>{selectedPerson.email}</div>
         </div>
         <button className="border border-black" onClick={onShowMoreClick}>
-          show more
+          {detailsButtonText}
         </button>
         {isMoreDetailsVisible ? (
           <MoreDetails selectedPerson={selectedPerson} />

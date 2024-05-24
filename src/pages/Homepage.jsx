@@ -13,6 +13,7 @@ export default function Homepage({ isMobileOrTablet }) {
   const [isSidebarVisible, setSidebarVisible] = useState(true);
   const [isMainPanelVisible, setMainPanelVisible] = useState(!isMobileOrTablet);
   const [isMoreDetailsVisible, setMoreDetailsVisible] = useState(false);
+  const [detailsButtonText, setDetailsButtonText] = useState("show more");
   const [isPersonItemVisible, setPersonItemVisible] =
     useState(isMobileOrTablet);
 
@@ -64,6 +65,10 @@ export default function Homepage({ isMobileOrTablet }) {
     isMoreDetailsVisible
       ? setMoreDetailsVisible(false)
       : setMoreDetailsVisible(true);
+
+    detailsButtonText === "show more"
+      ? setDetailsButtonText("show less")
+      : setDetailsButtonText("show more");
   };
 
   return (
@@ -82,6 +87,7 @@ export default function Homepage({ isMobileOrTablet }) {
           isMoreDetailsVisible={isMoreDetailsVisible}
           isPersonItemVisible={isPersonItemVisible}
           isMobileOrTablet={isMobileOrTablet}
+          detailsButtonText={detailsButtonText}
         />
       ) : (
         <WebHomepage
@@ -97,6 +103,7 @@ export default function Homepage({ isMobileOrTablet }) {
           isMoreDetailsVisible={isMoreDetailsVisible}
           isPersonItemVisible={isPersonItemVisible}
           isMobileOrTablet={isMobileOrTablet}
+          detailsButtonText={detailsButtonText}
         />
       )}
     </div>
