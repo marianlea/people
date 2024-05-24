@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import PeopleApi from "../utils/people_api.js";
+import { People } from "../utils/people_api.js";
 import MobileHomepage from "../components/MobileHomepage.jsx";
 import WebHomepage from "../components/WebHomepage.jsx";
 import SortPeople from "../helpers/SortPeople.js";
@@ -18,7 +18,7 @@ export default function Homepage({ isMobileOrTablet }) {
 
   const peopleData = async () => {
     try {
-      const peopleData = await PeopleApi.all();
+      const peopleData = await People.all();
       setPeople(Markers(SortPeople(peopleData)));
     } catch (error) {
       console.error(error);

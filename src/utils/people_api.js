@@ -5,8 +5,6 @@ async function all() {
   return res.data;
 }
 
-const People = {
+export const People = {
   all,
 };
-
-export default People;
