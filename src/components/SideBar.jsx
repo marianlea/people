@@ -7,9 +7,14 @@ export default function SideBar({
   people,
   selectedPerson,
   onPersonSelect,
+  isSidebarVisible,
+  isMobileOrTablet,
 }) {
   return (
-    <div className="search-bar shrink-0">
+    <div
+      className={`search-bar shrink-0 w-full p-5
+    ${isSidebarVisible ? "visble" : "invisible"}`}
+    >
       <h1 className="text-xl">People</h1>
       <SearchBar searchInput={searchInput} setSearchInput={setSearchInput} />
       <PeopleList

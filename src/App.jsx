@@ -1,10 +1,13 @@
 import "./App.css";
-import Homepage from "./pages/homepage";
+import Homepage from "./pages/Homepage";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
+  const isMobileOrTablet = useMediaQuery({ query: "(max-width: 991px)" });
+
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2x">
-      <Homepage />
+    <div className="h-full rounded-xl shadow-md">
+      <Homepage isMobileOrTablet={isMobileOrTablet} />
     </div>
   );
 }

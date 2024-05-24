@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+
 import PeopleApi from "../utils/people_api";
-import SideBar from "../components/SideBar";
-import MainPanel from "../components/MainPanel";
+import MobileHomepage from "../components/MobileHomepage";
+import WebHomepage from "../components/WebHomepage";
 
 const user = {
   id: 0,
@@ -27,10 +28,15 @@ const user = {
   },
 };
 
-export default function Homepage() {
+export default function Homepage({ isMobileOrTablet }) {
   const [people, setPeople] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [selectedPerson, setSelectedPerson] = useState({});
+  const [isSidebarVisible, setSidebarVisible] = useState(true);
+  const [isMainPanelVisible, setMainPanelVisible] = useState(!isMobileOrTablet);
+  const [isMoreDetailsVisible, setMoreDetailsVisible] = useState(false);
+  const [isPersonItemVisible, setPersonItemVisible] =
+    useState(isMobileOrTablet);
 
   const peopleData = async () => {
     try {
@@ -58,20 +64,63 @@ export default function Homepage() {
 
   const handleSelectPerson = (person) => {
     setSelectedPerson(person);
+    if (isMobileOrTablet) {
+      setSidebarVisible(false);
+      setPersonItemVisible(true);
+    }
+    setMainPanelVisible(true);
+    setPersonItemVisible(true);
+  };
+
+  const handleBackClick = () => {
+    if (isMobileOrTablet) {
+      setMainPanelVisible(false);
+      setSidebarVisible(true);
+    } else {
+      setPersonItemVisible(false);
+    }
+    setMoreDetailsVisible(false);
+  };
+
+  const handleShowMoreDetails = () => {
+    isMoreDetailsVisible
+      ? setMoreDetailsVisible(false)
+      : setMoreDetailsVisible(true);
   };
 
   return (
-    <section className="homepage md:flex">
-      <div className="md:flex">
-        <SideBar
-          people={filteredPeople}
+    <div className="homepage h-full w-full">
+      {isMobileOrTablet ? (
+        <MobileHomepage
+          selectedPerson={selectedPerson}
+          isMainPanelVisible={isMainPanelVisible}
+          filteredPeople={filteredPeople}
           searchInput={searchInput}
           setSearchInput={setSearchInput}
-          selectedPerson={selectedPerson}
-          onPersonSelect={handleSelectPerson}
+          handleSelectPerson={handleSelectPerson}
+          isSidebarVisible={isSidebarVisible}
+          onBackClick={handleBackClick}
+          onShowMoreClick={handleShowMoreDetails}
+          isMoreDetailsVisible={isMoreDetailsVisible}
+          isPersonItemVisible={isPersonItemVisible}
+          isMobileOrTablet={isMobileOrTablet}
         />
-        <MainPanel selectedPerson={selectedPerson} />
-      </div>
-    </section>
+      ) : (
+        <WebHomepage
+          selectedPerson={selectedPerson}
+          isMainPanelVisible={isMainPanelVisible}
+          filteredPeople={filteredPeople}
+          searchInput={searchInput}
+          setSearchInput={setSearchInput}
+          handleSelectPerson={handleSelectPerson}
+          isSidebarVisible={isSidebarVisible}
+          onBackClick={handleBackClick}
+          onShowMoreClick={handleShowMoreDetails}
+          isMoreDetailsVisible={isMoreDetailsVisible}
+          isPersonItemVisible={isPersonItemVisible}
+          isMobileOrTablet={isMobileOrTablet}
+        />
+      )}
+    </div>
   );
 }
