@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-import PeopleApi from "./utils/people_api";
-import MobileHomepage from "./components/MobileHomepage";
-import WebHomepage from "./components/WebHomepage";
-import SortPeople from "./helpers/SortPeople.js";
-import Markers from "./helpers/Markers.js";
+import PeopleApi from "../utils/people_api.js";
+import MobileHomepage from "../components/MobileHomepage.jsx";
+import WebHomepage from "../components/WebHomepage.jsx";
+import SortPeople from "../helpers/SortPeople.js";
+import Markers from "../helpers/Markers.js";
 
 export default function Homepage({ isMobileOrTablet }) {
   const [people, setPeople] = useState([]);
