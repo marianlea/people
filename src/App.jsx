@@ -1,5 +1,5 @@
 import "./App.css";
-import Homepage from "./pages/Homepage.jsx";
+import Homepage from "./pages/Homepage";
 import { useMediaQuery } from "react-responsive";
 
 function App() {
