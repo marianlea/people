@@ -78,9 +78,14 @@ export default function PersonItem({
           </div>
           <div>{selectedPerson.email}</div>
         </div>
-        <button className="border border-black" onClick={onShowMoreClick}>
-          {detailsButtonText}
-        </button>
+        <div className="flex items-center justify-center">
+          <button
+            className="border border-black w-3/4 md:w-1/2"
+            onClick={onShowMoreClick}
+          >
+            {detailsButtonText}
+          </button>
+        </div>
         {isMoreDetailsVisible ? (
           <MoreDetails selectedPerson={selectedPerson} />
         ) : null}

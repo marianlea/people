@@ -83,6 +83,7 @@ export default function Homepage({ isMobileOrTablet }) {
     }
     // Hide more details
     setMoreDetailsVisible(false);
+    setDetailsButtonText("show more");
   };
 
   // Handle the show more details button click
